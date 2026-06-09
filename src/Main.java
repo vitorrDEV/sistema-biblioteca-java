@@ -28,11 +28,24 @@ public class Main {
 
             switch (op){
                 case 1:
-
+                    System.out.println("=== CADASTRAR LIVRO ===\n");
+                    System.out.println("Titulo: ");
+                    String titulo = scanner.nextLine();
+                    System.out.println("Autor: ");
+                    String autor = scanner.nextLine();
+                    System.out.println("Ano: ");
+                    int ano = scanner.nextInt();
+                    scanner.nextLine();
+                    gerenciadorLivro.cadastrarLivro(new Livro(titulo, autor, ano));
                     break;
                 case 2:
+                    gerenciadorLivro.listarLivros();
                     break;
                 case 3:
+                    System.out.println("Digite o ID do livro:");
+                    int id = scanner.nextInt();
+                    scanner.nextLine();
+                    gerenciadorLivro.emprestarLivro(id);
                     break;
                 case 4:
                     break;
