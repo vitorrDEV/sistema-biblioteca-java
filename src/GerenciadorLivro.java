@@ -43,5 +43,37 @@ public class GerenciadorLivro {
         }
     }
 
+    public void buscarLivro(int id){
+        boolean encontrado = false;
+        for (Livro l: livros){
+            if (l.getId() == id){
+                System.out.println("\nLivro encontrado: \n");
+                System.out.println("Id: "+l.getId());
+                System.out.println("Titulo: "+l.getTitulo());
+                System.out.println("Autor: "+l.getAutor());
+                System.out.println("Ano: "+l.getAno());
+                System.out.println("Status: "+l.getLivroEmprestado());
+                encontrado = true;
+                break;
+            }
+        } if (!encontrado){
+            System.out.println("Livro não encontrado.");
+        }
+    }
+
+    public void removerLivro(int id){
+        boolean encontrado = false;
+        for (Livro l: livros){
+            if (l.getId() == id){
+                livros.remove(l);
+                System.out.println("Livro "+l.getAutor()+" removido com sucesso.");
+                encontrado = true;
+                break;
+            }
+        } if (!encontrado){
+            System.out.println("Livro não encontrado.");
+        }
+    }
+
 
 }

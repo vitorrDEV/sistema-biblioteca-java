@@ -50,8 +50,18 @@ public class Main {
                 case 4:
                     break;
                 case 5:
+                    System.out.println("=== BUSCAR LIVRO ===\n");
+                    System.out.println("Digite o ID do livro: ");
+                    int idBuscarLivro = scanner.nextInt();
+                    scanner.nextLine();
+                    gerenciadorLivro.buscarLivro(idBuscarLivro);
                     break;
                 case 6:
+                    System.out.println("=== REMOVER LIVRO ===\n");
+                    System.out.println("Digite o ID: \n");
+                    int idRemover = scanner.nextInt();
+                    scanner.nextLine();
+                    gerenciadorLivro.removerLivro(idRemover);
                     break;
                 case 0:
                     System.out.println("Encerrando...");
