@@ -48,6 +48,11 @@ public class Main {
                     gerenciadorLivro.emprestarLivro(id);
                     break;
                 case 4:
+                    System.out.println("=== DEVOLUÇÃO ===\n");
+                    System.out.println("Digite o id do livro: ");
+                    int idDevolucao = scanner.nextInt();
+                    scanner.nextLine();
+                    gerenciadorLivro.devolverLivro(idDevolucao);
                     break;
                 case 5:
                     System.out.println("=== BUSCAR LIVRO ===\n");

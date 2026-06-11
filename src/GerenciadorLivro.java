@@ -32,14 +32,32 @@ public class GerenciadorLivro {
                 encontrado = true;
                 if (l.getLivroEmprestado() == LivroEmprestado.DISPONIVEL){
                     l.setLivroEmprestado(LivroEmprestado.EMPRESTADO);
-                    System.out.println("Livro: "+l.getTitulo()+" emprestado com sucesso");
+                    System.out.println("Livro: "+l.getTitulo()+" emprestado com sucesso.");
                 } else {
                     System.out.println("*** Não foi possivel: Este livro ja esta emprestado no momento ***");
                 }
                 break;
             }
         } if (!encontrado) {
-            System.out.println("Livro com o ID "+id+" não foi encontrado");
+            System.out.println("Livro com o ID "+id+" não foi encontrado.");
+        }
+    }
+
+    public void devolverLivro(int id){
+        boolean encontrado = false;
+        for (Livro l: livros){
+            if (l.getId() == id){
+                encontrado = true;
+                if (l.getLivroEmprestado() == LivroEmprestado.EMPRESTADO){
+                    l.setLivroEmprestado(LivroEmprestado.DISPONIVEL);
+                    System.out.println("Livro: "+l.getTitulo()+" devolvido com sucesso.");
+                } else {
+                    System.out.println("Esse livro não esta emprestado");
+                }
+                break;
+            }
+        } if (!encontrado){
+            System.out.println("Livro com o ID "+id+" não foi encontrado.");
         }
     }
 
